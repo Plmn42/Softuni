@@ -1,4 +1,6 @@
-﻿namespace cond_stat._adv_ex
+﻿using System;
+
+namespace cond_stat._adv_ex
 {
     internal class Program
     {
