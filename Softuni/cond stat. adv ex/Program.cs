@@ -1,30 +1,67 @@
 ﻿using System;
 
-namespace cond_stat._adv_ex
+namespace ski_trip
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string type = Console.ReadLine();
-            int row = int.Parse(Console.ReadLine());
-            int column = int.Parse(Console.ReadLine());
+            int daysCount = int.Parse(Console.ReadLine()) - 1;
+            string roomType = Console.ReadLine();
+            string grade = Console.ReadLine();
 
-            double income = 0.0;
+            double roomPrice = roomType switch
+            {
+                "rrom for one person" => 18.0,
+                "apartment" => 25.0,
+                "president apartment" => 35.0,
+                _ => 0
+            };
 
-            if (type == "Premiere")
+            double totalPrice = daysCount * roomPrice;
+
+            if (roomType == "apartment") 
             {
-                income = row * column * 12.00;
+                if (daysCount < 10) 
+                {
+                    totalPrice *= 0.7;
+                }
+                else if (daysCount >= 10 && daysCount <= 15) 
+                {
+                    totalPrice *= 0.65;
+                }
+                else 
+                {
+                    totalPrice *= 0.5;
+                }
             }
-            else if (type == "Normal")
+
+            if (roomType == "president apartment")
             {
-                income = row * column * 7.50;
+                if (daysCount < 10)
+                {
+                    totalPrice *= 0.9;
+                }
+                else if (daysCount >= 10 && daysCount <= 15)
+                {
+                    totalPrice *= 0.85;
+                }
+                else
+                {
+                    totalPrice *= 0.8;
+                }
             }
-            else if (type == "Discount") 
+
+            if (grade == "positive")
             {
-                income = row * column * 5.00;
+                totalPrice *= 1.25;
             }
-            Console.WriteLine($"{income:f2} leva");
+            else 
+            {
+                totalPrice *= 0.9;
+            }
+
+            Console.WriteLine($"{totalPrice:f2}");
         }
     }
 }
