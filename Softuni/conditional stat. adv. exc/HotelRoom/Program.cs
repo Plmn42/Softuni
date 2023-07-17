@@ -11,12 +11,12 @@ namespace hotel_room
 
             double apartmentPrice = 0, studioPrice = 0;
 
-            switch (month) 
+            switch (month)
             {
                 case "May":
                 case "October":
                     apartmentPrice = 65;
-                    studioPrice = 50; 
+                    studioPrice = 50;
                     break;
                 case "June":
                 case "September":
@@ -41,15 +41,15 @@ namespace hotel_room
             {
                 totalStudioCost *= 0.95;
             }
-            else if (nightsCount > 14 && (month == "June" || month == "September")) 
+            else if (nightsCount > 14 && (month == "June" || month == "September"))
             {
                 totalStudioCost *= 0.8;
             }
 
-            if (nightsCount > 14) 
+            if (nightsCount > 14)
             {
                 totalApartmentCost *= 0.9;
-            } 
+            }
 
             Console.WriteLine($"Apartment: {totalApartmentCost:f2} lv.");
             Console.WriteLine($"Studio: {totalStudioCost:f2} lv.");

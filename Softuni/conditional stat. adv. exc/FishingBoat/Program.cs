@@ -30,12 +30,12 @@ namespace fishing_boat
                 totalCost *= 0.85;
             }
 
-            else 
+            else
             {
                 totalCost *= 0.75;
             }
 
-            if (season != "Autumn" && fishermanCount % 2 == 0) 
+            if (season != "Autumn" && fishermanCount % 2 == 0)
             {
                 totalCost *= 0.95;
             }
@@ -44,7 +44,7 @@ namespace fishing_boat
             {
                 Console.WriteLine($"Yes! You have {budget - totalCost:f2} leva left.");
             }
-            else 
+            else
             {
                 Console.WriteLine($"Not enough money! You need {totalCost - budget:f2} leva.");
             }

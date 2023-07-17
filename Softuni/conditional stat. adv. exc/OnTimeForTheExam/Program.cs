@@ -37,8 +37,8 @@ namespace OnTimeForExam
                 }
                 else
                 {
-                    int minutes = diffInTimes % 60;   
-                    diffInTimes /= 60;  
+                    int minutes = diffInTimes % 60;
+                    diffInTimes /= 60;
 
 
                     Console.WriteLine("Early");
@@ -54,8 +54,8 @@ namespace OnTimeForExam
                 }
                 else
                 {
-                    int minutes = diffInTimes % 60;  
-                    diffInTimes /= 60; 
+                    int minutes = diffInTimes % 60;
+                    diffInTimes /= 60;
 
                     Console.WriteLine("Late");
                     Console.WriteLine($"{diffInTimes}:{minutes:d2} hours after the start");
