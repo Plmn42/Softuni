@@ -1,4 +1,6 @@
-﻿namespace TrekkingMania
+﻿using System;
+
+namespace TrekkingMania
 {
     internal class Program
     {
